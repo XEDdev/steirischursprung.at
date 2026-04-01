@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700|Playfair+Display:wght@300;400;600;700|Crimson+Text:wght@300;400;600;700|Arvo:wght@300;400;600;700&display=swap");
+
+/* ==========================================================================
+   XED /Template — Custom CSS (generiert aus betheme)
+   Farben und Fonts aus dem Original-Design, angepasst für Bootstrap 5.
+   Part of the XED Suite · https://xed.dev
+   ========================================================================== */
+
+:root {
+  /* Farben (extrahiert aus Original-CSS) */
+  --bs-primary: #006633;
+  --bs-secondary: #7b6852;
+  --bs-accent: #444444;
+  --bs-primary-rgb: 0, 102, 51;
+  --bs-navbar-bg: #206f40;
+
+  /* Fonts (extrahiert aus Original-CSS) */
+  --bs-font-heading: 'Josefin Sans', sans-serif;
+  --bs-font-body: 'Crimson Text', serif;
+  --bs-font-display: 'Playfair Display', serif;
+}
+
+/* ============================================================
+   Typography
+   ============================================================ */
+
+body {
+  font-family: var(--bs-font-body);
+  color: #444444;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--bs-font-heading);
+  color: var(--bs-primary);
+  font-weight: 600;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.5rem; }
+
+.display-1, .display-2, .display-3 {
+  font-family: var(--bs-font-display);
+}
+
+/* ============================================================
+   Top Bar (Action Bar)
+   ============================================================ */
+
+.site-topbar {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 6px 0;
+  font-size: 13px;
+}
+
+.site-topbar .btn-outline-primary {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-width: 2px;
+  padding: 4px 16px;
+}
+
+/* ============================================================
+   Navbar — Split Layout: Links — Logo — Rechts
+   ============================================================ */
+
+.site-navbar {
+  background-color: var(--bs-navbar-bg) !important;
+  padding: 0;
+  min-height: 80px;
+}
+
+.site-navbar .container {
+  position: relative;
+}
+
+/* Logo zentriert */
+.site-navbar .navbar-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -20px;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+}
+
+.site-navbar .navbar-logo img {
+  height: 120px;
+  width: auto;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+
+/* Menü-Items */
+.site-navbar .nav-link {
+  color: rgba(255,255,255,0.9) !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--bs-font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 28px 18px !important;
+  transition: color 0.2s;
+}
+
+.site-navbar .nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* Links und Rechts gleichmäßig verteilen */
+.site-navbar .nav-left {
+  flex: 1;
+  justify-content: flex-end;
+  padding-right: 80px;
+}
+
+.site-navbar .nav-right {
+  flex: 1;
+  justify-content: flex-start;
+  padding-left: 80px;
+}
+
+/* Dropdown Styling */
+.site-navbar .dropdown-menu {
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  min-width: 220px;
+}
+
+.site-navbar .dropdown-item {
+  font-family: var(--bs-font-heading);
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 8px 20px;
+  color: #444444;
+}
+
+.site-navbar .dropdown-item:hover {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: var(--bs-font-heading);
+  font-size: 13px;
+}
+
+.btn-primary:hover {
+  background-color: #7b6852;
+  border-color: #7b6852;
+}
+
+.btn-outline-primary {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+/* ============================================================
+   Content Sections
+   ============================================================ */
+
+main {
+  padding-top: 0;
+}
+
+main .container {
+  max-width: 960px;
+}
+
+.section-dark {
+  background-color: var(--bs-primary);
+  color: white;
+  padding: 60px 0;
+}
+
+.section-dark h1, .section-dark h2, .section-dark h3 {
+  color: white;
+}
+
+.section-light {
+  background-color: #f4f4f4;
+  padding: 60px 0;
+}
+
+/* ============================================================
+   Hero / Carousel
+   ============================================================ */
+
+.hero {
+  position: relative;
+  height: 85vh;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero img.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero .hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-family: var(--bs-font-display);
+  font-size: 3.5rem;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+  margin-bottom: 2rem;
+}
+
+.hero .btn {
+  font-size: 14px;
+  padding: 12px 36px;
+  border: 2px solid white;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero .btn:hover {
+  background-color: white;
+  color: var(--bs-primary);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+footer {
+  background-color: var(--bs-primary) !important;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white !important;
+}
+
+footer h5 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   Images
+   ============================================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 991px) {
+  .site-navbar .navbar-logo {
+    position: relative;
+    left: auto;
+    transform: none;
+    top: auto;
+  }
+  .site-navbar .navbar-logo img {
+    height: 60px;
+  }
+  .site-navbar .nav-left,
+  .site-navbar .nav-right {
+    padding: 0;
+    flex: none;
+  }
+  .site-navbar .nav-link {
+    padding: 10px 15px !important;
+  }
+}
