@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./assets/css/custom.css" rel="stylesheet">
+  <title>CSS Test</title>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <a href="#" class="topbar-cta">Topbar CTA Test</a>
+    <a href="#">Link Test</a>
+  </div>
+</div>
+
+<nav class="site-nav">
+  <div class="container">
+    <ul class="nav-left">
+      <li><a href="#">Links 1</a></li>
+      <li><a href="#">Links 2</a></li>
+      <li><a href="#">Links 3</a></li>
+    </ul>
+    <a class="nav-logo" href="/"><img src="/assets/img/logo.png" alt="Logo"></a>
+    <ul class="nav-right">
+      <li><a href="#">Rechts 1</a></li>
+      <li><a href="#">Rechts 2</a></li>
+      <li><a href="#">Rechts 3</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="container" style="padding: 2rem 0;">
+    <h1>CSS Pipeline Test</h1>
+    <p>Wenn diese Seite gestylt ist (gruene Navbar, Topbar mit Rahmen, Logo zentriert),
+       funktioniert die Pipeline: GitHub → Nginx → Browser.</p>
+    <p>Wenn KEIN Styling sichtbar ist, wird custom.css nicht geladen.</p>
+    <h2>Commit: f9bfdfb + test.html</h2>
+    <p style="color: red; font-weight: bold;">
+      Pruefe: Ist --su-primary (#006633) aktiv?
+      → Diese Ueberschriften sollten GRUEN sein.
+    </p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h5>Footer Test</h5><p>Sollte gruener Hintergrund sein.</p></div>
+      <div><h5>Spalte 2</h5><p>Footer-Grid mit 3 Spalten.</p></div>
+      <div class="footer-copy"><p>© Test</p></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
