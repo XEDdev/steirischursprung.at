@@ -66,84 +66,89 @@ h3 { font-size: 1.5rem; }
 
 /* ============================================================
    Navbar — Split Layout: Links — Logo — Rechts
+   Hohe Spezifität um Bootstrap zu überschreiben
    ============================================================ */
 
-.site-navbar {
-  background-color: var(--bs-navbar-bg) !important;
-  padding: 0;
-  min-height: 80px;
+nav.navbar.navbar-expand-lg.site-navbar {
+  background-color: #206f40 !important;
+  padding: 0 !important;
+  min-height: 80px !important;
 }
 
-.site-navbar .container {
+nav.site-navbar .container {
   position: relative;
 }
 
 /* Logo zentriert */
-.site-navbar .navbar-logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -20px;
-  z-index: 10;
-  padding: 0;
-  margin: 0;
+nav.site-navbar a.navbar-brand.navbar-logo {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: -20px !important;
+  z-index: 10 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.site-navbar .navbar-logo img {
-  height: 120px;
-  width: auto;
+nav.site-navbar a.navbar-logo img {
+  height: 140px !important;
+  width: auto !important;
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
 }
 
-/* Menü-Items */
-.site-navbar .nav-link {
+/* Menü-Items — höchste Spezifität */
+nav.site-navbar .navbar-nav .nav-item .nav-link,
+nav.site-navbar .navbar-nav .nav-item .nav-link.dropdown-toggle {
   color: rgba(255,255,255,0.9) !important;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-family: var(--bs-font-heading);
-  font-size: 13px;
-  font-weight: 600;
-  padding: 28px 18px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  font-family: 'Josefin Sans', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 30px 18px !important;
   transition: color 0.2s;
 }
 
-.site-navbar .nav-link:hover {
+nav.site-navbar .navbar-nav .nav-item .nav-link:hover,
+nav.site-navbar .navbar-nav .nav-item .nav-link.dropdown-toggle:hover {
   color: #ffffff !important;
 }
 
 /* Links und Rechts gleichmäßig verteilen */
-.site-navbar .nav-left {
-  flex: 1;
-  justify-content: flex-end;
-  padding-right: 80px;
+nav.site-navbar .nav-left {
+  flex: 1 !important;
+  justify-content: flex-end !important;
+  padding-right: 90px !important;
 }
 
-.site-navbar .nav-right {
-  flex: 1;
-  justify-content: flex-start;
-  padding-left: 80px;
+nav.site-navbar .nav-right {
+  flex: 1 !important;
+  justify-content: flex-start !important;
+  padding-left: 90px !important;
 }
 
 /* Dropdown Styling */
-.site-navbar .dropdown-menu {
-  border: none;
-  border-radius: 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  padding: 8px 0;
-  min-width: 220px;
+nav.site-navbar .dropdown-menu {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+  padding: 10px 0 !important;
+  min-width: 240px !important;
+  margin-top: 0 !important;
 }
 
-.site-navbar .dropdown-item {
-  font-family: var(--bs-font-heading);
-  font-size: 13px;
-  letter-spacing: 1px;
-  padding: 8px 20px;
-  color: #444444;
+nav.site-navbar .dropdown-menu .dropdown-item {
+  font-family: 'Josefin Sans', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  padding: 10px 24px !important;
+  color: #444444 !important;
 }
 
-.site-navbar .dropdown-item:hover {
-  background-color: var(--bs-primary);
-  color: white;
+nav.site-navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #006633 !important;
+  color: white !important;
 }
 
 /* ============================================================
