@@ -393,12 +393,17 @@ footer ul li { margin-bottom: 0.3rem; }
 
 .footer-copy { text-align: left; }
 
-/* --- Feature Grid (3 Spalten nach Hero) --- */
+/* --- Feature Grid (3 Spalten nach Hero, edge-to-edge) --- */
+.section-full:has(.feature-grid) {
+  padding: 0;
+}
+
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
   max-width: none;
+  margin: 0;
 }
 
 .feature-card {
@@ -538,6 +543,8 @@ footer ul li { margin-bottom: 0.3rem; }
   .has-children.open > ul { display: block; }
 
   .topbar { display: none; }
+
+  .feature-grid { grid-template-columns: 1fr; }
 }
 
 /* --- Print --- */
