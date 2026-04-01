@@ -1,214 +1,651 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700|Playfair+Display:wght@300;400;600;700|Crimson+Text:wght@300;400;600;700|Arvo:wght@300;400;600;700&display=swap");
-
 /* ==========================================================================
-   XED /Template — Custom CSS (generiert aus betheme)
-   Farben und Fonts aus dem Original-Design, angepasst für Bootstrap 5.
+   XED /Template — Custom CSS (Pico-inspired, Bootstrap-free)
+   Farben und Fonts aus dem Original-Design von steirischursprung.at
    Part of the XED Suite · https://xed.dev
    ========================================================================== */
 
-:root {
-  /* Farben (extrahiert aus Original-CSS) */
-  --bs-primary: #006633;
-  --bs-secondary: #7b6852;
-  --bs-accent: #444444;
-  --bs-primary-rgb: 0, 102, 51;
-  --bs-navbar-bg: #206f40;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Playfair+Display:wght@300;400;600;700&family=Crimson+Text:wght@300;400;600;700&family=Arvo:wght@300;400;600;700&display=swap");
 
-  /* Fonts (extrahiert aus Original-CSS) */
-  --bs-font-heading: 'Josefin Sans', sans-serif;
-  --bs-font-body: 'Crimson Text', serif;
-  --bs-font-display: 'Playfair Display', serif;
+/* ==========================================================================
+   1. Design Tokens (CSS Custom Properties)
+   Inspiriert von Pico CSS — alle Werte zentral konfigurierbar
+   ========================================================================== */
+
+:root {
+  /* --- Farben (extrahiert aus Original-CSS) --- */
+  --su-primary: #006633;
+  --su-primary-hover: #004d26;
+  --su-primary-rgb: 0, 102, 51;
+  --su-navbar-bg: #206f40;
+  --su-secondary: #7b6852;
+  --su-secondary-hover: #6a5a45;
+  --su-text: #444444;
+  --su-text-muted: #888888;
+  --su-bg: #ffffff;
+  --su-bg-light: #f4f4f4;
+  --su-bg-warm: #f8f8f8;
+  --su-bg-holz: #d5c8b9;
+  --su-border: #e0e0e0;
+  --su-white: #ffffff;
+  --su-white-muted: rgba(255, 255, 255, 0.5);
+
+  /* --- Typografie --- */
+  --su-font-heading: 'Josefin Sans', sans-serif;
+  --su-font-body: 'Crimson Text', serif;
+  --su-font-display: 'Playfair Display', serif;
+  --su-font-size: 16px;
+  --su-line-height: 1.7;
+
+  /* --- Spacing --- */
+  --su-spacing: 1rem;
+  --su-section-padding: 60px;
+  --su-container-max: 960px;
+  --su-container-wide: 1200px;
+  --su-container-pad: 1rem;
+  --su-grid-gap: 1rem;
+
+  /* --- Navbar --- */
+  --su-navbar-height: 80px;
+  --su-logo-height: 140px;
+  --su-logo-height-mobile: 60px;
+
+  /* --- Effekte --- */
+  --su-radius: 0;
+  --su-transition: 0.2s ease-in-out;
+  --su-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --su-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ============================================================
-   Typography
-   ============================================================ */
+/* ==========================================================================
+   2. Reset / Basis
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: var(--bs-font-body);
-  color: #444444;
-  font-size: 16px;
-  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  font-family: var(--su-font-body);
+  font-size: var(--su-font-size);
+  line-height: var(--su-line-height);
+  color: var(--su-text);
+  background-color: var(--su-bg);
+  -webkit-text-size-adjust: 100%;
 }
 
+a {
+  color: var(--su-primary);
+  text-decoration: none;
+  transition: color var(--su-transition);
+}
+
+a:hover {
+  color: var(--su-primary-hover);
+}
+
+ul, ol {
+  padding-left: 1.5em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   3. Typografie (Classless — bare HTML Elements)
+   ========================================================================== */
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--bs-font-heading);
-  color: var(--bs-primary);
+  font-family: var(--su-font-heading);
+  color: var(--su-primary);
   font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 0.5em;
 }
 
 h1 { font-size: 2.2rem; }
 h2 { font-size: 1.8rem; }
 h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
 
-.display-1, .display-2, .display-3 {
-  font-family: var(--bs-font-display);
+p {
+  margin: 0 0 1em;
 }
 
-/* ============================================================
-   Top Bar (Action Bar)
-   ============================================================ */
+strong, b {
+  font-weight: 700;
+}
 
+blockquote {
+  border-left: 4px solid var(--su-primary);
+  margin: 1.5em 0;
+  padding: 0.5em 1.5em;
+  color: var(--su-text-muted);
+  font-style: italic;
+}
+
+/* ==========================================================================
+   4. Container
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--su-container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--su-container-pad);
+  padding-right: var(--su-container-pad);
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: var(--su-container-pad);
+  padding-right: var(--su-container-pad);
+}
+
+/* ==========================================================================
+   5. Grid-System (Bootstrap-Kompatibilitätsschicht via CSS Grid)
+   Damit der generierte Content (col-12, col-md-6, row) weiter funktioniert
+   ========================================================================== */
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--su-grid-gap);
+}
+
+/* Volle Breite (Default, Mobile-first) */
+.col-12,
+[class*="col-md-"] {
+  grid-column: span 12;
+}
+
+/* Desktop Grid (ab 768px) */
+@media (min-width: 768px) {
+  .col-md-2  { grid-column: span 2; }
+  .col-md-3  { grid-column: span 3; }
+  .col-md-4  { grid-column: span 4; }
+  .col-md-6  { grid-column: span 6; }
+  .col-md-8  { grid-column: span 8; }
+  .col-md-9  { grid-column: span 9; }
+  .col-md-12 { grid-column: span 12; }
+}
+
+/* BeTheme MCB Grid Compat (Falls nicht konvertiert) */
+.col-12-fourth  { grid-column: span 12; }
+.col-12-third   { grid-column: span 12; }
+.col-12-half    { grid-column: span 12; }
+
+@media (min-width: 768px) {
+  .col-12-fourth  { grid-column: span 3; }
+  .col-12-third   { grid-column: span 4; }
+  .col-12-half    { grid-column: span 6; }
+}
+
+/* MCB Section & Wrap Compat */
+.section { margin-bottom: 0; }
+.section_wrapper { width: 100%; }
+.column_attr { width: 100%; }
+
+/* ==========================================================================
+   6. Display-Utilities (Bootstrap-Compat, minimal)
+   ========================================================================== */
+
+.px-0 { padding-left: 0 !important; padding-right: 0 !important; }
+.py-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-5 { padding-top: 3rem; padding-bottom: 3rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 3rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+
+.d-flex { display: flex; }
+.d-none { display: none; }
+
+.justify-content-between { justify-content: space-between; }
+.align-items-center { align-items: center; }
+.align-self-start { align-self: start; }
+.align-self-center { align-self: center; }
+.align-self-end { align-self: end; }
+
+.text-center, .align_center { text-align: center; }
+.text-md-end { text-align: right; }
+
+.gap-3 { gap: 1rem; }
+
+/* Responsive Display */
+@media (min-width: 768px) {
+  .d-md-block { display: block; }
+}
+
+@media (min-width: 992px) {
+  .d-lg-none { display: none; }
+}
+
+.column-margin-0px { gap: 0; }
+
+/* ==========================================================================
+   7. Top Bar (Action Bar)
+   ========================================================================== */
+
+.topbar {
+  background-color: var(--su-bg-warm);
+  border-bottom: 1px solid var(--su-border);
+  padding: 6px 0;
+  font-size: 13px;
+  font-family: var(--su-font-heading);
+}
+
+.topbar .container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbar a {
+  color: var(--su-text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color var(--su-transition);
+}
+
+.topbar a:hover {
+  color: var(--su-primary);
+}
+
+.topbar-cta {
+  display: inline-block;
+  padding: 4px 16px;
+  border: 2px solid var(--su-primary);
+  color: var(--su-primary) !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all var(--su-transition);
+}
+
+.topbar-cta:hover {
+  background-color: var(--su-primary);
+  color: var(--su-white) !important;
+}
+
+/* Legacy .site-topbar compat (für noch nicht regenerierte Seiten) */
 .site-topbar {
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #e0e0e0;
+  background-color: var(--su-bg-warm);
+  border-bottom: 1px solid var(--su-border);
   padding: 6px 0;
   font-size: 13px;
 }
 
 .site-topbar .btn-outline-primary {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-width: 2px;
+  display: inline-block;
   padding: 4px 16px;
-}
-
-/* ============================================================
-   Navbar — Split Layout: Links — Logo — Rechts
-   Hohe Spezifität um Bootstrap zu überschreiben
-   ============================================================ */
-
-nav.navbar.navbar-expand-lg.site-navbar {
-  background-color: #206f40 !important;
-  padding: 0 !important;
-  min-height: 80px !important;
-}
-
-nav.site-navbar .container {
-  position: relative;
-}
-
-/* Logo zentriert */
-nav.site-navbar a.navbar-brand.navbar-logo {
-  position: absolute !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  top: -20px !important;
-  z-index: 10 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-nav.site-navbar a.navbar-logo img {
-  height: 140px !important;
-  width: auto !important;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
-}
-
-/* Menü-Items — höchste Spezifität */
-nav.site-navbar .navbar-nav .nav-item .nav-link,
-nav.site-navbar .navbar-nav .nav-item .nav-link.dropdown-toggle {
-  color: rgba(255,255,255,0.9) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 2px !important;
-  font-family: 'Josefin Sans', sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  padding: 30px 18px !important;
-  transition: color 0.2s;
-}
-
-nav.site-navbar .navbar-nav .nav-item .nav-link:hover,
-nav.site-navbar .navbar-nav .nav-item .nav-link.dropdown-toggle:hover {
-  color: #ffffff !important;
-}
-
-/* Links und Rechts gleichmäßig verteilen */
-nav.site-navbar .nav-left {
-  flex: 1 !important;
-  justify-content: flex-end !important;
-  padding-right: 90px !important;
-}
-
-nav.site-navbar .nav-right {
-  flex: 1 !important;
-  justify-content: flex-start !important;
-  padding-left: 90px !important;
-}
-
-/* Dropdown Styling */
-nav.site-navbar .dropdown-menu {
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
-  padding: 10px 0 !important;
-  min-width: 240px !important;
-  margin-top: 0 !important;
-}
-
-nav.site-navbar .dropdown-menu .dropdown-item {
-  font-family: 'Josefin Sans', sans-serif !important;
-  font-size: 12px !important;
-  letter-spacing: 1px !important;
-  text-transform: uppercase !important;
-  padding: 10px 24px !important;
-  color: #444444 !important;
-}
-
-nav.site-navbar .dropdown-menu .dropdown-item:hover {
-  background-color: #006633 !important;
-  color: white !important;
-}
-
-/* ============================================================
-   Buttons
-   ============================================================ */
-
-.btn-primary {
-  background-color: var(--bs-primary);
-  border-color: var(--bs-primary);
+  border: 2px solid var(--su-primary);
+  color: var(--su-primary);
+  background: transparent;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: var(--bs-font-heading);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--su-transition);
+}
+
+.site-topbar .btn-outline-primary:hover {
+  background-color: var(--su-primary);
+  color: var(--su-white);
+}
+
+.site-topbar .btn { cursor: pointer; }
+
+.site-topbar .text-muted {
+  color: var(--su-text-muted) !important;
+}
+
+.site-topbar .small {
   font-size: 13px;
 }
 
+.site-topbar .text-decoration-none {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   8. Navbar — Split Layout: Links — Logo — Rechts
+   Reines CSS Flexbox, keine Bootstrap-Abhängigkeit
+   ========================================================================== */
+
+.site-nav {
+  background-color: var(--su-navbar-bg);
+  min-height: var(--su-navbar-height);
+  position: relative;
+  z-index: 100;
+}
+
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: var(--su-navbar-height);
+}
+
+/* Logo zentriert (über der Navbar schwebend) */
+.nav-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -20px;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.nav-logo img {
+  height: var(--su-logo-height);
+  width: auto;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Nav-Gruppen Links & Rechts */
+.nav-left,
+.nav-right {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.nav-left {
+  justify-content: flex-end;
+  padding-right: 90px;
+}
+
+.nav-right {
+  justify-content: flex-start;
+  padding-left: 90px;
+}
+
+/* Nav-Items */
+.nav-left > li,
+.nav-right > li {
+  position: relative;
+}
+
+.nav-left > li > a,
+.nav-right > li > a {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--su-font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 30px 18px;
+  text-decoration: none;
+  transition: color var(--su-transition);
+  white-space: nowrap;
+}
+
+.nav-left > li > a:hover,
+.nav-right > li > a:hover {
+  color: var(--su-white);
+}
+
+/* Dropdown (CSS hover, kein JS nötig auf Desktop) */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  background: var(--su-white);
+  box-shadow: var(--su-shadow);
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  z-index: 200;
+}
+
+.has-dropdown:hover > .dropdown {
+  display: block;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 24px;
+  color: var(--su-text);
+  font-family: var(--su-font-heading);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all var(--su-transition);
+}
+
+.dropdown li a:hover {
+  background-color: var(--su-primary);
+  color: var(--su-white);
+}
+
+/* Hamburger (Mobile) */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--su-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+/* Hamburger Icon (3 Striche via CSS) */
+.nav-toggle-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--su-white);
+  position: relative;
+  transition: background var(--su-transition);
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--su-white);
+  position: absolute;
+  left: 0;
+  transition: transform var(--su-transition);
+}
+
+.nav-toggle-icon::before { top: -7px; }
+.nav-toggle-icon::after  { top: 7px; }
+
+/* Legacy .site-navbar compat (für noch nicht regenerierte Seiten) */
+.site-navbar {
+  background-color: var(--su-navbar-bg) !important;
+  min-height: var(--su-navbar-height);
+  padding: 0 !important;
+}
+
+.site-navbar .navbar-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -20px;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+}
+
+.site-navbar .navbar-logo img {
+  height: var(--su-logo-height);
+  width: auto;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Legacy nav-link styling */
+.site-navbar .nav-link,
+.site-navbar .nav-link.dropdown-toggle {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--su-font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 30px 18px;
+  transition: color var(--su-transition);
+}
+
+.site-navbar .nav-link:hover {
+  color: var(--su-white) !important;
+}
+
+.site-navbar .nav-left {
+  flex: 1;
+  justify-content: flex-end;
+  padding-right: 90px;
+}
+
+.site-navbar .nav-right {
+  flex: 1;
+  justify-content: flex-start;
+  padding-left: 90px;
+}
+
+.site-navbar .dropdown-menu {
+  border: none;
+  border-radius: 0;
+  box-shadow: var(--su-shadow);
+  padding: 10px 0;
+  min-width: 240px;
+  margin-top: 0;
+}
+
+.site-navbar .dropdown-item {
+  font-family: var(--su-font-heading);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  color: var(--su-text);
+}
+
+.site-navbar .dropdown-item:hover {
+  background-color: var(--su-primary);
+  color: var(--su-white);
+}
+
+/* ==========================================================================
+   9. Buttons
+   ========================================================================== */
+
+.btn,
+button[type="submit"] {
+  display: inline-block;
+  padding: 10px 24px;
+  font-family: var(--su-font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--su-transition);
+}
+
+.btn-primary {
+  background-color: var(--su-primary);
+  border-color: var(--su-primary);
+  color: var(--su-white);
+}
+
 .btn-primary:hover {
-  background-color: #7b6852;
-  border-color: #7b6852;
+  background-color: var(--su-secondary);
+  border-color: var(--su-secondary);
+  color: var(--su-white);
 }
 
 .btn-outline-primary {
-  color: var(--bs-primary);
-  border-color: var(--bs-primary);
+  background: transparent;
+  border-color: var(--su-primary);
+  color: var(--su-primary);
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--bs-primary);
-  color: white;
+  background-color: var(--su-primary);
+  color: var(--su-white);
 }
 
-/* ============================================================
-   Content Sections
-   ============================================================ */
+.btn-sm {
+  padding: 4px 16px;
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   10. Content Sections
+   ========================================================================== */
 
 main {
   padding-top: 0;
 }
 
-main .container {
-  max-width: 960px;
+main > .container {
+  max-width: var(--su-container-max);
 }
 
 .section-dark {
-  background-color: var(--bs-primary);
-  color: white;
-  padding: 60px 0;
+  background-color: var(--su-primary);
+  color: var(--su-white);
+  padding: var(--su-section-padding) 0;
 }
 
-.section-dark h1, .section-dark h2, .section-dark h3 {
-  color: white;
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.section-dark h4,
+.section-dark h5,
+.section-dark h6 {
+  color: var(--su-white);
 }
 
 .section-light {
-  background-color: #f4f4f4;
-  padding: 60px 0;
+  background-color: var(--su-bg-light);
+  padding: var(--su-section-padding) 0;
 }
 
-/* ============================================================
-   Hero / Carousel
-   ============================================================ */
+/* BeTheme dark section compat */
+.dark {
+  color: var(--su-white);
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4 {
+  color: var(--su-white);
+}
+
+/* Grüne Zierleisten (Original sep-green-top/bottom) */
+.top,
+.bottom {
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+/* ==========================================================================
+   11. Hero / Carousel
+   ========================================================================== */
 
 .hero {
   position: relative;
@@ -219,64 +656,132 @@ main .container {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: var(--su-white);
 }
 
 .hero img.hero-bg {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: 0;
 }
 
 .hero .hero-overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.3);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
 .hero .hero-content {
   position: relative;
   z-index: 2;
+  max-width: 700px;
+  padding: 0 var(--su-container-pad);
 }
 
 .hero h1 {
-  font-family: var(--bs-font-display);
+  font-family: var(--su-font-display);
   font-size: 3.5rem;
-  color: white;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  color: var(--su-white);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   margin-bottom: 1rem;
 }
 
 .hero p {
   font-size: 1.2rem;
-  text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
   margin-bottom: 2rem;
 }
 
 .hero .btn {
   font-size: 14px;
   padding: 12px 36px;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid var(--su-white);
+  color: var(--su-white);
+  background: transparent;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .hero .btn:hover {
-  background-color: white;
-  color: var(--bs-primary);
+  background-color: var(--su-white);
+  color: var(--su-primary);
 }
 
-/* ============================================================
-   Footer
-   ============================================================ */
+/* ==========================================================================
+   12. Footer
+   ========================================================================== */
 
+.site-footer {
+  background-color: var(--su-primary);
+  color: var(--su-white);
+  padding: 3rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.site-footer h5 {
+  color: var(--su-white);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.site-footer a {
+  color: var(--su-white-muted);
+  text-decoration: none;
+  transition: color var(--su-transition);
+}
+
+.site-footer a:hover {
+  color: var(--su-white);
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer ul li {
+  margin-bottom: 0.3rem;
+}
+
+.site-footer p {
+  color: var(--su-white-muted);
+}
+
+.footer-copy {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .footer-copy {
+    text-align: right;
+  }
+}
+
+/* Legacy footer compat (für noch nicht regenerierte Seiten) */
 footer {
-  background-color: var(--bs-primary) !important;
+  background-color: var(--su-primary) !important;
 }
 
 footer a {
@@ -284,45 +789,316 @@ footer a {
 }
 
 footer a:hover {
-  color: white !important;
+  color: var(--su-white) !important;
 }
 
 footer h5 {
+  color: var(--su-white);
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 1rem;
 }
 
-/* ============================================================
-   Images
-   ============================================================ */
-
-img {
-  max-width: 100%;
-  height: auto;
+footer .text-white-50 {
+  color: var(--su-white-muted) !important;
 }
 
-/* ============================================================
-   Responsive
-   ============================================================ */
+footer .list-unstyled {
+  list-style: none;
+  padding: 0;
+}
 
+/* ==========================================================================
+   13. Bootstrap Legacy Utilities (für Content-Compat)
+   Diese Klassen kommen aus dem generierten Content und müssen funktionieren
+   ========================================================================== */
+
+.lead {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.text-muted {
+  color: var(--su-text-muted) !important;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.list-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-group-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--su-border);
+  color: var(--su-text);
+  text-decoration: none;
+}
+
+.list-group-item:hover {
+  background-color: var(--su-bg-light);
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+/* Navbar legacy: Bootstrap collapse compat (ohne JS) */
+.navbar-collapse {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav .nav-item {
+  position: relative;
+}
+
+.navbar-nav .nav-item .nav-link {
+  display: block;
+  text-decoration: none;
+}
+
+/* Bootstrap dropdown compat (CSS hover statt JS) */
+.navbar-nav .nav-item:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  background: var(--su-white);
+  box-shadow: var(--su-shadow);
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  z-index: 200;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px 24px;
+  color: var(--su-text);
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: var(--su-primary);
+  color: var(--su-white);
+}
+
+/* Hamburger toggle: ausgeblendet bis Bootstrap-JS ersetzt */
+.navbar-toggler {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--su-white);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.navbar-toggler-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+/* ==========================================================================
+   14. Responsive
+   ========================================================================== */
+
+/* Tablet (bis 991px) */
 @media (max-width: 991px) {
+  /* Navbar → vertikal */
+  .site-nav .container {
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    right: var(--su-container-pad);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-logo {
+    position: relative;
+    left: auto;
+    transform: none;
+    top: auto;
+    padding: 10px 0;
+  }
+
+  .nav-logo img {
+    height: var(--su-logo-height-mobile);
+  }
+
+  .nav-left,
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    flex: none;
+  }
+
+  .site-nav.nav-open .nav-left,
+  .site-nav.nav-open .nav-right {
+    display: flex;
+  }
+
+  .nav-left > li > a,
+  .nav-right > li > a {
+    padding: 10px 15px;
+  }
+
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .has-dropdown.dropdown-open > .dropdown {
+    display: block;
+  }
+
+  .dropdown li a {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 8px 24px 8px 36px;
+  }
+
+  .dropdown li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--su-white);
+  }
+
+  /* Legacy navbar mobile compat */
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-collapse {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-collapse.show {
+    display: flex;
+  }
+
   .site-navbar .navbar-logo {
     position: relative;
     left: auto;
     transform: none;
     top: auto;
   }
+
   .site-navbar .navbar-logo img {
-    height: 60px;
+    height: var(--su-logo-height-mobile);
   }
+
   .site-navbar .nav-left,
   .site-navbar .nav-right {
+    flex-direction: column;
     padding: 0;
     flex: none;
+    width: 100%;
   }
+
   .site-navbar .nav-link {
     padding: 10px 15px !important;
+  }
+
+  /* Topbar vereinfachen */
+  .topbar .container,
+  .site-topbar .container {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* Container padding */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Hero verkleinern */
+  .hero {
+    height: 60vh;
+    min-height: 350px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile (bis 575px) */
+@media (max-width: 575px) {
+  :root {
+    --su-font-size: 15px;
+  }
+
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.3rem; }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .footer-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   15. Print
+   ========================================================================== */
+
+@media print {
+  .topbar,
+  .site-topbar,
+  .site-nav,
+  .site-navbar,
+  .nav-toggle,
+  .navbar-toggler {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
   }
 }

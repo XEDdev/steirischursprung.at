@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Playfair+Display:wght@300;400;600;700&family=Crimson+Text:wght@300;400;600;700&family=Arvo:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="../assets/css/custom.css" rel="stylesheet">
   <title>Entdeckungsreise im E-Mercedes</title>
@@ -11,81 +10,77 @@
 <body>
 
 <!-- Top Bar -->
-<div class="site-topbar">
-  <div class="container d-flex justify-content-between align-items-center">
-    <div class="d-flex gap-3">
-      <a href="/kontakt/" class="btn btn-sm btn-outline-primary">Jetzt anfragen</a>
-      <a href="/zimmer-preise/" class="text-muted text-decoration-none small">Zimmer & Preise</a>
-      <a href="/kontakt/" class="text-muted text-decoration-none small">Kontakt</a>
-      <a href="/gutscheine/" class="text-muted text-decoration-none small">Gutschein bestellen</a>
-    </div>
+<div class="topbar">
+  <div class="container">
+    <a href="/kontakt/" class="topbar-cta">Jetzt anfragen</a>
+    <a href="/zimmer-preise/">Zimmer & Preise</a>
+    <a href="/kontakt/">Kontakt</a>
+    <a href="/gutscheine/">Gutschein bestellen</a>
   </div>
 </div>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark site-navbar">
+<nav class="site-nav">
   <div class="container">
+    <!-- Links vom Logo -->
+    <ul class="nav-left">
+      <li class="has-dropdown">
+        <a href="/hotel">Hotel</a>
+        <ul class="dropdown">
+          <li><a href="/hotel/">Hotel</a></li>
+          <li><a href="/erlebnishotel/">Erlebnishotel</a></li>
+          <li><a href="/">Angebote &amp; Packages</a></li>
+          <li><a href="/zimmer-preise/">Zimmer &#038; Preise</a></li>
+          <li><a href="/zimmer-und-angebote/ursprung-tour/">Erkundungstour</a></li>
+          <li><a href="/gutscheine/">Gutscheine bestellen</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/gasthaus/">Gasthaus</a>
+      </li>
+      <li class="has-dropdown">
+        <a href="/feiern-geniessen/">Feiern</a>
+        <ul class="dropdown">
+          <li><a href="/zimmer-und-angebote/braustube/">Braustube</a></li>
+          <li><a href="/veranstaltungssaele/">Veranstaltungssäle</a></li>
+          <li><a href="/hochzeiten/">Hochzeiten</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Logo (Mitte) -->
+    <a class="nav-logo" href="/"><img src="/assets/img/logo.png" alt="Steirischursprung"></a>
+
+    <!-- Rechts vom Logo -->
+    <ul class="nav-right">
+      <li class="has-dropdown">
+        <a href="/seminar/">Seminar</a>
+        <ul class="dropdown">
+          <li><a href="/zimmer-und-angebote/bienenstock/">Seminar im Bienenstock</a></li>
+          <li><a href="/veranstaltungssaele/">Veranstaltungssäle</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="/brauerei/">Brauerei</a>
+        <ul class="dropdown">
+          <li><a href="/zimmer-und-angebote/sonnenbierfuehrung/">Sonnenbierführungen</a></li>
+          <li><a href="/bierempfehlung/">Bierempfehlung</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/aktuelles-termine/">Aktuelles</a>
+      </li>
+    </ul>
+
     <!-- Hamburger (Mobile) -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-      <span class="navbar-toggler-icon"></span>
+    <button class="nav-toggle" aria-label="Menü" aria-expanded="false">
+      <span class="nav-toggle-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="mainNav">
-      <!-- Links vom Logo -->
-      <ul class="navbar-nav me-auto nav-left">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/hotel" data-bs-toggle="dropdown">Hotel</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/hotel/">Hotel</a></li>
-            <li><a class="dropdown-item" href="/erlebnishotel/">Erlebnishotel</a></li>
-            <li><a class="dropdown-item" href="/">Angebote &amp; Packages</a></li>
-            <li><a class="dropdown-item" href="/zimmer-preise/">Zimmer &#038; Preise</a></li>
-            <li><a class="dropdown-item" href="/zimmer-und-angebote/ursprung-tour/">Erkundungstour</a></li>
-            <li><a class="dropdown-item" href="/gutscheine/">Gutscheine bestellen</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/gasthaus/">Gasthaus</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/feiern-geniessen/" data-bs-toggle="dropdown">Feiern</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/zimmer-und-angebote/braustube/">Braustube</a></li>
-            <li><a class="dropdown-item" href="/veranstaltungssaele/">Veranstaltungssäle</a></li>
-            <li><a class="dropdown-item" href="/hochzeiten/">Hochzeiten</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <!-- Logo (Mitte) -->
-    <a class="navbar-brand navbar-logo" href="/"><img src="/assets/img/logo.png" alt="Steirisch Ursprung"></a>
-
-      <!-- Rechts vom Logo -->
-      <ul class="navbar-nav ms-auto nav-right">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/seminar/" data-bs-toggle="dropdown">Seminar</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/zimmer-und-angebote/bienenstock/">Seminar im Bienenstock</a></li>
-            <li><a class="dropdown-item" href="/veranstaltungssaele/">Veranstaltungssäle</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/brauerei/" data-bs-toggle="dropdown">Brauerei</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/zimmer-und-angebote/sonnenbierfuehrung/">Sonnenbierführungen</a></li>
-            <li><a class="dropdown-item" href="/bierempfehlung/">Bierempfehlung</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/aktuelles-termine/">Aktuelles</a>
-        </li>
-      </ul>
-    </div>
   </div>
 </nav>
 
 <!-- Content -->
-<main class="py-4">
+<main>
   <div class="container">
 <div class="section container-fluid px-0 no-margin-h no-margin-v wso-portfolio-entry "  style="padding-top:0px; padding-bottom:0px; background-color:; background-image:url(/assets/img/hotel-slider-tour.jpg); background-repeat:no-repeat; background-position:center; background-attachment:; background-size:; -webkit-background-size:" ><div class="section_wrapper "></div><div class="bottom" style="background-image:url(/assets/img/sep-green-bottom.png);height:6px"></div></div><div class="section container-fluid px-0 dark wso-single-portfolio-title-section "  style="padding-top:30px; padding-bottom:30px; background-color:#d5c8b9; background-image:url(/assets/img/header-bg.jpg); background-repeat:repeat; background-position:center; background-attachment:; background-size:; -webkit-background-size:" ><div class="section_wrapper "><div class="row col-12  column-margin-0px align-self-start " style="" ><div><div class="column mcb-column three-fourth column_column wso-single-portfolio-title column-margin-"><div class="column_attr "  style=" padding:7px 0 0;"><h1>Entdeckungsreise im E-Mercedes</h1></div></div><div class="column mcb-column col-12-fourth column_column wso-single-portfolio-price column-margin-"><div class="column_attr "  style=" padding:7px 0 0;"><h3>nur</h3><h2>99€</h2><h3>p. P.</h3></div></div></div></div></div></div><div class="section container-fluid px-0 equal-height-wrap wso-single-portfolio-description "  style="padding-top:100px; padding-bottom:165px; background-color:" ><div class="top" style="background-image:url(/assets/img/sep-green-top.png);height:6px"></div><div class="section_wrapper "><div class="row col-12-second  align-self-start " style="" ><div><div class="column mcb-column col-12 column_column  column-margin-"><div class="column_attr  align_left"  style=""><h2>Entdeckt die Oststeiermark und besucht unsere Genussbauern</h2></div></div><div class="column mcb-column col-12 column_column  column-margin-"><div class="column_attr  align_left"  style=""><p> Unternehmt CO2-neutrale Ausflugsfahrten mit dem E-Mercedes zu unseren Genussbauern sowie den schönsten Plätzen der Steiermark! Die Nacht verbringt ihr in unseren einmaligen Erlegniszimmer und startet mit unserem reichhaltigen Bauernfrühstück in den neuen Tag.</p><p> Teilt diese einzigartige Erfahrung und sorgt für einen Tag, an den ihr euch ewig erinnern werdet.</p></div></div><div class="column mcb-column col-12 column_column  column-margin-"><div class="column_attr  align_left"  style=""><h3>Leistungen:</h3><ul><li>2 Tage/1 Nacht für 1 Person im Ursprungszimmer</li><li>reichhaltiges steirisches Bauernfrühstück</li><li>Ausflug zu den schönsten Plätzen der Oststeiermark, beispielsweise Picknickplatz am Schöckl auf 1450 Höhenmeter, Picknick im Apfelland beim Stubenbergsee oder im Vulkanland bei der Riegersburg</li><li>Picknickkorb mit steirischen Schmankerln</li><li>Fahrt zu den Genussbauern: Besucht den Obstbauern Zaunschirm und den Bauernhof Schiffer, wo köstliches Bauern-Eis, Joghurt und Topfen produziert werden.</li><li>Benutzung des Wellnessbereichs mit Hopfenschwimmbad und Sauna</li></ul></div></div><div class="column mcb-column col-12 column_column wso-gutschein-link-to-product column-margin-"><div class="column_attr  align_left"  style=""><a class="button  button_size_2 button_js" href="/produkt/gutschein-fuer-1-person-entdeckungsreise-im-e-mercedes">><span class="button_label">Online Gutschein bestellen</span></a></div></div></div></div><div class="row col-12-second  align-self-start " style="" ><div><div class="column mcb-column col-12 column_image "><div class="image_frame image_item no_link  no_border" ><div class="image_wrapper"><img src="/assets/img/steirisch-ursprung_e-mercedes.jpg" alt="steirisch-ursprung_e-mercedes" width="616" height="745" /></div></div></div></div></div></div><div class="bottom" style="background-image:url(/assets/img/sep-green-bottom.png);height:6px"></div></div><div class="section container-fluid px-0 dark wso-single-portfolio-reservation "  style="padding-top:0px; padding-bottom:0px; background-color:#d5c8b9; background-image:url(/assets/img/header-bg.jpg); background-repeat:repeat; background-position:center; background-attachment:; background-size:; -webkit-background-size:" ><div class="section_wrapper "><div class="row col-12  column-margin-0px align-self-start " style="" ><div><div class="column mcb-column col-12-fourth column_column wso-single-portfolio-price column-margin-"><div class="column_attr "  style=" padding:7px 0 0;"><h3>nur</h3><h2>99€</h2><h3>p. P.</h3></div></div><div class="column mcb-column col-12 column_accordion "><div class="accordion"><div class="accordion_wrapper "><div class="question"><div class="title"><i class="icon-plus acc-icon-plus"></i><i class="icon-minus acc-icon-minus"></i><h2>Jetzt online anfragen</h2><h3>oder direkt anrufen: +43 3117 51 71</h3></div><div class="answer"><div role="form" class="wpcf7" id="wpcf7-f5-p1228-o1" lang="de-DE" dir="ltr"><div class="screen-reader-response"></div><form action="/zimmer-und-angebote/entdeckungsreise-im-e-mercedes/#wpcf7-f5-p1228-o1" method="post" class="wpcf7-form" novalidate="novalidate"><div style="display: none;"> <input type="hidden" name="_wpcf7" value="5" /> <input type="hidden" name="_wpcf7_version" value="4.5.1" /> <input type="hidden" name="_wpcf7_locale" value="de_DE" /> <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5-p1228-o1" /> <input type="hidden" name="_wpnonce" value="566cecfb75" /></div><div class="column col-12-second"><span class="wpcf7-form-control-wrap vorname"><input type="text" name="vorname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span> <label> Ihr Vorname (erforderlich)</label></div><div class="column col-12-second"><span class="wpcf7-form-control-wrap nachname"><input type="text" name="nachname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span> <label> Ihr Nachname (erforderlich)</label></div><div class="column col-12-second"><span class="wpcf7-form-control-wrap email-adresse"><input type="email" name="email-adresse" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span> <label> Ihre E-Mail Adresse (erforderlich)</label></div><div class="column col-12-second"><span class="wpcf7-form-control-wrap telefonnummer"><input type="tel" name="telefonnummer" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false" /></span> <label> Ihre Telefonnummer (optional)</label></div><div class="column col-12-second"><span class="wpcf7-form-control-wrap DatumAnfang"><input type="date" name="DatumAnfang" value="" class="wpcf7-form-control wpcf7-date wpcf7-validates-as-date" aria-invalid="false" /></span> <label> Anreise Datum </label></div><div class="column col-12-second"><span class="wpcf7-form-control-wrap DatumEnde"><input type="date" name="DatumEnde" value="" class="wpcf7-form-control wpcf7-date wpcf7-validates-as-date" aria-invalid="false" /></span> <label> Abreise Datum </label></div><div class="column col-12"><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span> <label> Ihre Nachricht (Platz für Anregungen und Wünsche)</label></div><p><span id="hp5b8bffd99becb" class="wpcf7-form-control-wrap company-wrap" style="display:none !important; visibility:hidden !important;"><label  class="hp-message">Please leave this field empty.</label><input class="wpcf7-form-control wpcf7-text"  type="text" name="company" value="" size="40" tabindex="-1" autocomplete="nope" /></span></p><div class="column col-12" style="text-align:center;"><input type="submit" value="Anfrage senden" class="wpcf7-form-control wpcf7-submit" /></div><div class="wpcf7-response-output wpcf7-display-none"></div></form></div></div></div></div></div></div></div></div></div></div><div class="section container-fluid px-0 "  style="padding-top:100px; padding-bottom:165px; background-color:" ><div class="top" style="background-image:url(/assets/img/sep-green-top.png);height:6px"></div><div class="section_wrapper "><div class="row col-12  align-self-start " style="" ><div><div class="column mcb-column col-12-fourth column_placeholder"><div class="placeholder">&nbsp;</div></div><div class="column mcb-column col-12-second column_column  column-margin-"><div class="column_attr  align_center"  style=""><h2>Weitere Angebote & Pakete</h2><p>Entdecke weitere fertig geschnürte Packages, die das Beste der Region und des Hotels Steirisch Ursprung miteinander vereinen!</p></div></div></div></div></div></div><div class="section container-fluid px-0 dark " id="wso-angebot-section" style="padding-top:100px; padding-bottom:60px; background-color:#16192a; background-image:url(/assets/img/bg-holz.jpg); background-repeat:no-repeat; background-position:center top; background-attachment:; background-size:; -webkit-background-size:" ><div class="top" style="background-image:url(/assets/img/home_pizza2_decoration2.png);height:6px"></div><div class="section_wrapper "><div class="row col-12  align-self-start " style="margin-top:-250px" ><div><div class="column mcb-column col-12 column_column  column-margin-"><div class="column_attr "  style=""><style type="text/css">a.eg-henryharrison-element-1,a.eg-henryharrison-element-2{-webkit-transition:all .4s linear;   -moz-transition:all .4s linear;   -o-transition:all .4s linear;   -ms-transition:all .4s linear;   transition:all .4s linear}.eg-jimmy-carter-element-11 i:before{margin-left:0px; margin-right:0px}.eg-harding-element-17{letter-spacing:1px}.eg-harding-wrapper .esg-entry-media{overflow:hidden; box-sizing:border-box;   -webkit-box-sizing:border-box;   -moz-box-sizing:border-box;   padding:30px 30px 0px 30px}.eg-harding-wrapper .esg-entry-media img{overflow:hidden; border-radius:50%;   -webkit-border-radius:50%;   -moz-border-radius:50%}.eg-ulysses-s-grant-wrapper .esg-entry-media{overflow:hidden; box-sizing:border-box;   -webkit-box-sizing:border-box;   -moz-box-sizing:border-box;   padding:30px 30px 0px 30px}.eg-ulysses-s-grant-wrapper .esg-entry-media img{overflow:hidden; border-radius:50%;   -webkit-border-radius:50%;   -moz-border-radius:50%}.eg-richard-nixon-wrapper .esg-entry-media{overflow:hidden; box-sizing:border-box;   -webkit-box-sizing:border-box;   -moz-box-sizing:border-box;   padding:30px 30px 0px 30px}.eg-richard-nixon-wrapper .esg-entry-media img{overflow:hidden; border-radius:50%;   -webkit-border-radius:50%;   -moz-border-radius:50%}.eg-herbert-hoover-wrapper .esg-entry-media img{filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");   filter:gray;   -webkit-filter:grayscale(100%)}.eg-herbert-hoover-wrapper:hover .esg-entry-media img{filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0,0 1 0 0 0,0 0 1 0 0,0 0 0 1 0'/></filter></svg>#grayscale");  -webkit-filter:grayscale(0%)}.eg-lyndon-johnson-wrapper .esg-entry-media img{filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");   filter:gray;   -webkit-filter:grayscale(100%)}.eg-lyndon-johnson-wrapper:hover .esg-entry-media img{filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0,0 1 0 0 0,0 0 1 0 0,0 0 0 1 0'/></filter></svg>#grayscale");  -webkit-filter:grayscale(0%)}.esg-overlay.eg-ronald-reagan-container{background:-moz-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:-webkit-gradient(linear,left top,left bottom,color-stop(50%,rgba(0,0,0,0)),color-stop(99%,rgba(0,0,0,0.83)),color-stop(100%,rgba(0,0,0,0.85))); background:-webkit-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:-o-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:-ms-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:linear-gradient(to bottom,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000',endColorstr='#d9000000',GradientType=0 )}.eg-georgebush-wrapper .esg-entry-cover{background:-moz-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:-webkit-gradient(linear,left top,left bottom,color-stop(50%,rgba(0,0,0,0)),color-stop(99%,rgba(0,0,0,0.83)),color-stop(100%,rgba(0,0,0,0.85))); background:-webkit-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:-o-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:-ms-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:linear-gradient(to bottom,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000',endColorstr='#d9000000',GradientType=0 )}.eg-jefferson-wrapper{-webkit-border-radius:5px !important; -moz-border-radius:5px !important; border-radius:5px !important; -webkit-mask-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC) !important}.eg-monroe-element-1{text-shadow:0px 1px 3px rgba(0,0,0,0.1)}.eg-lyndon-johnson-wrapper .esg-entry-cover{background:-moz-radial-gradient(center,ellipse cover,rgba(0,0,0,0.35) 0%,rgba(18,18,18,0) 96%,rgba(19,19,19,0) 100%); background:-webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,rgba(0,0,0,0.35)),color-stop(96%,rgba(18,18,18,0)),color-stop(100%,rgba(19,19,19,0))); background:-webkit-radial-gradient(center,ellipse cover,rgba(0,0,0,0.35) 0%,rgba(18,18,18,0) 96%,rgba(19,19,19,0) 100%); background:-o-radial-gradient(center,ellipse cover,rgba(0,0,0,0.35) 0%,rgba(18,18,18,0) 96%,rgba(19,19,19,0) 100%); background:-ms-radial-gradient(center,ellipse cover,rgba(0,0,0,0.35) 0%,rgba(18,18,18,0) 96%,rgba(19,19,19,0) 100%); background:radial-gradient(ellipse at center,rgba(0,0,0,0.35) 0%,rgba(18,18,18,0) 96%,rgba(19,19,19,0) 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000',endColorstr='#00131313',GradientType=1 )}.eg-wilbert-wrapper .esg-entry-cover{background:-moz-radial-gradient(center,ellipse cover,rgba(0,0,0,0.35) 0%,rgba(18,18,18,0) 96%,rgba(19,19,19,0) 100%); background:-webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,rgba(0,0,0,0.35)),color-stop(96%,rgba(18,18,18,0)),color-stop(100%,rgba(19,19,19,0))); background:-webkit-radial-gradient(center,ellipse cover,rgba(0,0,0,0.35) 0%,rgba(18,18,18,0) 96%,rgba(19,19,19,0) 100%); background:-o-radial-gradient(center,ellipse cover,rgba(0,0,0,0.35) 0%,rgba(18,18,18,0) 96%,rgba(19,19,19,0) 100%); background:-ms-radial-gradient(center,ellipse cover,rgba(0,0,0,0.35) 0%,rgba(18,18,18,0) 96%,rgba(19,19,19,0) 100%); background:radial-gradient(ellipse at center,rgba(0,0,0,0.35) 0%,rgba(18,18,18,0) 96%,rgba(19,19,19,0) 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000',endColorstr='#00131313',GradientType=1 )}.eg-wilbert-wrapper .esg-entry-media img{-webkit-transition:0.4s ease-in-out;  -moz-transition:0.4s ease-in-out;  -o-transition:0.4s ease-in-out;  transition:0.4s ease-in-out;  filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");   filter:gray;   -webkit-filter:grayscale(100%)}.eg-wilbert-wrapper:hover .esg-entry-media img{filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0,0 1 0 0 0,0 0 1 0 0,0 0 0 1 0'/></filter></svg>#grayscale");  -webkit-filter:grayscale(0%)}.eg-phillie-element-3:after{content:" ";width:0px;height:0px;border-style:solid;border-width:5px 5px 0 5px;border-color:#000 transparent transparent transparent;left:50%;margin-left:-5px; bottom:-5px; position:absolute}.eg-howardtaft-wrapper .esg-entry-media img,.eg-howardtaft-wrapper .esg-media-poster{filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0,0 1 0 0 0,0 0 1 0 0,0 0 0 1 0'/></filter></svg>#grayscale");  -webkit-filter:grayscale(0%)}.eg-howardtaft-wrapper:hover .esg-entry-media img,.eg-howardtaft-wrapper:hover .esg-media-poster{filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");   filter:gray;   -webkit-filter:grayscale(100%)}.myportfolio-container .added_to_cart.wc-forward{font-family:"Open Sans"; font-size:13px; color:#fff; margin-top:10px}.esgbox-title.esgbox-title-outside-wrap{font-size:15px; font-weight:700; text-align:center}.esgbox-title.esgbox-title-inside-wrap{padding-bottom:10px; font-size:15px; font-weight:700; text-align:center}.esg-content.eg-twitterstream-element-33-a{display:inline-block}.eg-twitterstream-element-35{word-break:break-all}.esg-overlay.eg-twitterstream-container{background:-moz-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:-webkit-gradient(linear,left top,left bottom,color-stop(50%,rgba(0,0,0,0)),color-stop(99%,rgba(0,0,0,0.83)),color-stop(100%,rgba(0,0,0,0.85))); background:-webkit-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:-o-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:-ms-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:linear-gradient(to bottom,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000',endColorstr='#d9000000',GradientType=0 )}.esg-content.eg-facebookstream-element-33-a{display:inline-block}.eg-facebookstream-element-0{word-break:break-all}.esg-overlay.eg-flickrstream-container{background:-moz-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:-webkit-gradient(linear,left top,left bottom,color-stop(50%,rgba(0,0,0,0)),color-stop(99%,rgba(0,0,0,0.83)),color-stop(100%,rgba(0,0,0,0.85))); background:-webkit-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:-o-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:-ms-linear-gradient(top,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); background:linear-gradient(to bottom,rgba(0,0,0,0) 50%,rgba(0,0,0,0.83) 99%,rgba(0,0,0,0.85) 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000',endColorstr='#d9000000',GradientType=0 )}</style><style type="text/css">.wso-news-carousel .navigationbuttons,.wso-news-carousel .esg-pagination,.wso-news-carousel .esg-filters{text-transform:uppercase; text-align:center}.wso-news-carousel .esg-filterbutton,.wso-news-carousel .esg-navigationbutton,.wso-news-carousel .esg-sortbutton,.wso-news-carousel .esg-cartbutton{color:#4bc9e8; margin-right:5px; cursor:pointer; position:relative; z-index:2; padding:1px 30px; border:none; line-height:52px; font-size:32px; font-weight:300; font-family:"Roboto Condensed",Arial,Tahoma,sans-serif; display:inline-block; margin-bottom:5px}.wso-news-carousel .esg-pagination-button{font-size:26px}.wso-news-carousel .esg-navigationbutton{padding:2px 12px}.wso-news-carousel .esg-navigationbutton *{color:#006633}.wso-news-carousel .esg-pagination-button:last-child{margin-right:0}.wso-news-carousel .esg-sortbutton-wrapper,.wso-news-carousel .esg-cartbutton-wrapper{display:inline-block}.wso-news-carousel .esg-sortbutton-order,.wso-news-carousel .esg-cartbutton-order{display:inline-block;  vertical-align:top;  border:none;  width:40px;  line-height:40px;  border-radius:5px;  -moz-border-radius:5px;  -webkit-border-radius:5px;  font-size:12px;  font-weight:700;  color:#999;  cursor:pointer;  background:#eee;  background:#fff;  margin-left:5px}.wso-news-carousel .esg-cartbutton{color:#fff; cursor:default !important}.wso-news-carousel .esg-cartbutton .esgicon-basket{color:#fff;   font-size:15px;   line-height:15px;   margin-right:10px}.wso-news-carousel .esg-cartbutton-wrapper{cursor:default !important}.wso-news-carousel .esg-sortbutton,.wso-news-carousel .esg-cartbutton{display:inline-block; position:relative; cursor:pointer; margin-right:0px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px}.wso-news-carousel .esg-navigationbutton:hover,.wso-news-carousel .esg-filterbutton:hover,.wso-news-carousel .esg-sortbutton:hover,.wso-news-carousel .esg-sortbutton-order:hover,.wso-news-carousel .esg-cartbutton-order:hover,.wso-news-carousel .esg-filterbutton.selected{border-color:none}.wso-news-carousel .esg-pagination-button.selected{color:#1e5474}.wso-news-carousel .esg-sortbutton-order.tp-desc:hover{color:#333}.wso-news-carousel .esg-filter-checked{padding:1px 3px;  color:#cbcbcb;  background:#cbcbcb;  margin-left:7px;  font-size:9px;  font-weight:300;  line-height:9px;  vertical-align:middle}.wso-news-carousel .esg-filterbutton.selected .esg-filter-checked,.wso-news-carousel .esg-filterbutton:hover .esg-filter-checked{padding:1px 3px 1px 3px;  color:#fff;  background:#000;  margin-left:7px;  font-size:9px;  font-weight:300;  line-height:9px;  vertical-align:middle}</style><style type="text/css">.eg-wso-angebote-element-36{font-size:17px; line-height:22px; color:#ffffff; font-weight:300; display:inline-block; float:none; clear:both; margin:-70px 0px 0px 0px ; padding:17px 0px 17px 0px ; border-radius:0px 0px 0px 0px ; background-color:rgba(186,141,26,0); position:relative; z-index:2 !important; font-family:"Roboto Condensed",Arial,Tahoma,sans-serif}.eg-wso-angebote-element-23{font-size:17px; line-height:22px; color:#ffffff; font-weight:300; display:inline-block; float:none; clear:both; margin:-70px 0px 0px 0px ; padding:17px 0px 17px 0px ; border-radius:0px 0px 0px 0px ; background-color:rgba(186,141,26,0); position:relative; z-index:2 !important; font-family:"Roboto Condensed",Arial,Tahoma,sans-serif}.eg-wso-angebote-element-28{font-size:26px !important; line-height:26px !important; color:#006633 !important; font-weight:400 !important; padding:0px 0px 0px 0px !important; border-radius:0px 0px 0px 0px !important; background-color:rgba(255,255,255,0.15) !important; z-index:2 !important; display:block; font-family:"Crimson Text",Arial,Tahoma,sans-serif !important}.eg-wso-angebote-element-6{font-size:18px; line-height:25px; color:#554030; font-weight:400; display:block; text-align:center; clear:none; margin:22px 0px 25px 0px ; padding:0px 0px 0px 0px ; border-radius:0px 0px 0px 0px ; background-color:rgba(255,255,255,0); position:relative; z-index:2 !important; font-family:"Josefin Sans",Arial,Tahoma,sans-serif}.eg-wso-angebote-element-34{font-size:12px; line-height:42px; color:#006633; font-weight:400; display:inline-block; float:none; clear:both; margin:0px 0px 0px 0px ; padding:0px 0px 0px 0px ; border-radius:0px 0px 0px 0px ; background-color:rgba(255,255,255,1.00); position:absolute; height:auto; width:auto; bottom:14px; right:13px; z-index:2 !important}.eg-wso-angebote-element-30{font-size:12px; line-height:42px; color:#006633; font-weight:400; display:inline-block; float:none; clear:both; margin:0px 0px 0px 0px ; padding:0px 0px 0px 0px ; border-radius:0px 0px 0px 0px ; background-color:rgba(255,255,255,1.00); position:absolute; height:auto; width:auto; bottom:14px; left:13px; z-index:2 !important}.eg-wso-angebote-element-27{font-size:16px; line-height:16px; color:#ffffff; font-weight:400; padding:11px 20px 11px 20px ; border-radius:0px 0px 0px 0px ; background-color:rgba(255,255,255,0); z-index:2 !important; display:block; font-family:"Josefin Sans",Arial,Tahoma,sans-serif}</style><style type="text/css">.eg-wso-angebote-element-27:hover{font-size:16px; line-height:16px; color:#ffffff; font-weight:400; border-radius:0px 0px 0px 0px ; background-color:rgba(255,255,255,0); font-family:"Josefin Sans",Arial,Tahoma,sans-serif}</style><style type="text/css">.eg-wso-angebote-element-28-a{display:block !important; text-align:center !important; clear:both !important; margin:25px 0px 0px 0px !important; position:relative !important}</style><style type="text/css">.eg-wso-angebote-element-27-a{display:inline-block; float:none; clear:both; margin:px 0px 0px 0px ; position:relative}</style><style type="text/css">.eg-wso-angebote-container{background-color:rgba(255,255,255,0.25)}</style><style type="text/css">.eg-wso-angebote-content{background-color:; padding:30px 50px 70px 50px; border-width:0px 0px 0px 0px; border-radius:0px 0px 0px 0px; border-color:transparent; border-style:double; text-align:center}</style><style type="text/css">.esg-grid .mainul li.eg-wso-angebote-wrapper{background-color:#ffffff; padding:0px 0px 0px 0px; border-width:0px 0px 0px 0px; border-radius:0px 0px 0px 0px; border-color:transparent; border-style:none}</style><style type="text/css">.esg-grid .mainul li.eg-wso-angebote-wrapper .esg-media-poster{background-size:cover; background-position:center center; background-repeat:no-repeat}</style><article class="myportfolio-container wso-news-carousel" id="esg-grid-2-1-wrap"><div id="esg-grid-2-1" class="esg-grid" style="background-color: transparent;padding: 0px 0px 0px 0px ; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;"><ul><li id="eg-2-post-id-159" class="filterall filter-fuer-2-p filter-pakete eg-wso-angebote-wrapper eg-post-id-159" data-date="1462985890"><div class="esg-media-cover-wrapper"><div class="esg-entry-media"><img src="/assets/img/SteirischUrsprung_06-1024x768.jpg" alt="" width="1024" height="768"></div><div class="esg-entry-cover" data-clickable="on"><a class="eg-invisiblebutton" href="/zimmer-und-angebote/kuscheln-fuer-zwei/" target="_self"></a><div class="esg-overlay esg-fade eg-wso-angebote-container" data-delay="0"></div><div class="esg-top eg-post-159 eg-wso-angebote-nostyle-element-35"><div class="wso-gutschein-link-ribbon"><div class="wso-gutschein-link-ribbon-inner"> <a href="/produkt/gutschein-kuscheln-fuer-zwei/">Gutschein<br>online bestellen</a></div></div></div></div><div class="esg-entry-content eg-wso-angebote-content"><div class="esg-content eg-post-159 eg-wso-angebote-element-36">Preis auf <br> Anfrage</div><div class="esg-content eg-post-159 eg-wso-angebote-element-23"><span class="wso-skin-prefix">ab</span><br> <span style="font-size: 27px; font-weight: 300; font-family: 'Playfair Display', serif; font-style: italic;">198</span><span class="wso-skin-currency">€</span><br> <span class="wso-skin-suffix">p.P.</span></div><h3 class="esg-content eg-post-159 eg-wso-angebote-element-28-a"><a class="eg-wso-angebote-element-28 eg-post-159" href="/zimmer-und-angebote/kuscheln-fuer-zwei/" target="_self">Kuscheln für zwei: Entspannen auf Steirisch</a></h3><div class="esg-content eg-wso-angebote-element-22 esg-none esg-clear" style="height: 5px; visibility: hidden;"></div><div class="esg-content eg-post-159 eg-wso-angebote-element-6">Unvergessliche Momente zu zweit im Heubett und beim Bierbad:
 1 Nacht für 2 mit vielen Extras</div><div class="esg-content eg-wso-angebote-element-25 esg-none esg-clear" style="height: 5px; visibility: hidden;"></div><div class="esg-absolute eg-post-159 eg-wso-angebote-element-34"><i class="icon-dot"></i></div><div class="esg-absolute eg-post-159 eg-wso-angebote-element-30"><i class="icon-dot"></i></div><div class="esg-content eg-post-159 eg-wso-angebote-element-27-a"><a class="eg-wso-angebote-element-27 eg-post-159" href="/zimmer-und-angebote/kuscheln-fuer-zwei/" target="_self">Mehr erfahren</a></div></div></div></li><li id="eg-2-post-id-156" class="filterall filter-fuer-2-p filter-pakete eg-wso-angebote-wrapper eg-post-id-156" data-date="1474304290"><div class="esg-media-cover-wrapper"><div class="esg-entry-media"><img src="/assets/img/SteirischUrsprung_F-1024x942.jpg" alt="" width="1024" height="942"></div><div class="esg-entry-cover" data-clickable="on"><a class="eg-invisiblebutton" href="/zimmer-und-angebote/schlafen-im-heu-und-baden-im-bier/" target="_self"></a><div class="esg-overlay esg-fade eg-wso-angebote-container" data-delay="0"></div><div class="esg-top eg-post-156 eg-wso-angebote-nostyle-element-35"><div class="wso-gutschein-link-ribbon"><div class="wso-gutschein-link-ribbon-inner"> <a href="/produkt/gutschein-schlafen-im-heu-und-baden-im-bier/">Gutschein<br>online bestellen</a></div></div></div></div><div class="esg-entry-content eg-wso-angebote-content"><div class="esg-content eg-post-156 eg-wso-angebote-element-36">Preis auf <br> Anfrage</div><div class="esg-content eg-post-156 eg-wso-angebote-element-23"><span class="wso-skin-prefix">ab</span><br> <span style="font-size: 27px; font-weight: 300; font-family: 'Playfair Display', serif; font-style: italic;">299</span><span class="wso-skin-currency">€</span><br> <span class="wso-skin-suffix">p.P.</span></div><h3 class="esg-content eg-post-156 eg-wso-angebote-element-28-a"><a class="eg-wso-angebote-element-28 eg-post-156" href="/zimmer-und-angebote/schlafen-im-heu-und-baden-im-bier/" target="_self">Schlafen im Heu und baden im Bier</a></h3><div class="esg-content eg-wso-angebote-element-22 esg-none esg-clear" style="height: 5px; visibility: hidden;"></div><div class="esg-content eg-post-156 eg-wso-angebote-element-6">Ein einzigartiges Erlebnis:
@@ -287,28 +282,48 @@ var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax
 </main>
 
 <!-- Footer -->
-<footer class="py-5 mt-5" style="background-color: var(--bs-primary); color: white;">
+<footer class="site-footer">
   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
+    <div class="footer-grid">
+      <div>
         <h5>Steirischursprung</h5>
-        <p class="text-white-50"><!-- Adresse und Kontaktdaten --></p>
+        <p><!-- Adresse und Kontaktdaten --></p>
       </div>
-      <div class="col-md-4">
+      <div>
         <h5>Navigation</h5>
-        <ul class="list-unstyled">
-          <li><a href="/impressum/" class="text-white-50">Impressum</a></li>
-          <li><a href="/datenschutz/" class="text-white-50">Datenschutz</a></li>
-          <li><a href="/agb/" class="text-white-50">AGB</a></li>
+        <ul>
+          <li><a href="/impressum/">Impressum</a></li>
+          <li><a href="/datenschutz/">Datenschutz</a></li>
+          <li><a href="/agb/">AGB</a></li>
         </ul>
       </div>
-      <div class="col-md-4 text-md-end">
-        <p class="text-white-50">&copy; Steirischursprung</p>
+      <div class="footer-copy">
+        <p>&copy; Steirischursprung</p>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function() {
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.site-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('nav-open');
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+    });
+  }
+  document.querySelectorAll('.has-dropdown > a').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      if (window.innerWidth < 992) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('dropdown-open');
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
