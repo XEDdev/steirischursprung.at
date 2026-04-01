@@ -188,10 +188,84 @@ blockquote {
   .col-12-half    { grid-column: span 6; }
 }
 
+/* BeTheme weitere Grid-Varianten */
+.col-12-second  { grid-column: span 12; }
+.three-fourth   { grid-column: span 12; }
+.column_placeholder { display: none; }
+
+@media (min-width: 768px) {
+  .col-12-second  { grid-column: span 6; }
+  .three-fourth   { grid-column: span 9; }
+  .column_placeholder { display: block; }
+}
+
 /* MCB Section & Wrap Compat */
 .section { margin-bottom: 0; }
-.section_wrapper { width: 100%; }
+.section_wrapper { width: 100%; max-width: var(--su-container-wide); margin: 0 auto; }
 .column_attr { width: 100%; }
+
+/* Sections sollen volle Breite haben (trotz .container-Wrapper in main) */
+main > .container {
+  max-width: none;
+  padding: 0;
+}
+
+/* container-fluid innerhalb von main: volle Breite */
+main .container-fluid {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Sektionen mit Hintergrund: volle Breite + innerer Padding */
+main .section {
+  overflow: hidden;
+}
+
+main .section .section_wrapper {
+  padding-left: var(--su-container-pad);
+  padding-right: var(--su-container-pad);
+}
+
+/* YouTube und iframes responsive */
+iframe {
+  max-width: 100%;
+}
+
+.content_video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.content_video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Accordion (BeTheme Video-Accordion) */
+.accordion .question .title {
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.accordion .question .answer {
+  overflow: hidden;
+}
+
+/* Image frames */
+.image_frame {
+  display: inline-block;
+}
+
+.image_frame img {
+  max-width: 100%;
+  height: auto;
+}
 
 /* ==========================================================================
    6. Display-Utilities (Bootstrap-Compat, minimal)
