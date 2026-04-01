@@ -1,0 +1,21 @@
+---
+layout: base.njk
+---
+
+{% if headerImage %}
+<div class="page-header" style="background-image: url('{{ headerImage }}');">
+  <h1>{{ title }}</h1>
+</div>
+<main>
+  <article>
+    {{ content | safe }}
+  </article>
+</main>
+{% else %}
+<main>
+  <article>
+    {% if title %}<h1>{{ title }}</h1>{% endif %}
+    {{ content | safe }}
+  </article>
+</main>
+{% endif %}

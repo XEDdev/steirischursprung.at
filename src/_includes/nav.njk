@@ -1,0 +1,48 @@
+{% set currentUrl = page.url %}
+
+<div class="topbar">
+  <a href="/kontakt/" class="topbar-cta">Jetzt anfragen</a>
+  <a href="/zimmer-preise/">Zimmer &amp; Preise</a>
+  <a href="/kontakt/">Kontakt</a>
+  <a href="/gutscheine/" class="topbar-cta topbar-right">Gutschein bestellen</a>
+</div>
+
+<nav class="site-nav" aria-label="Hauptnavigation">
+  <ul class="nav-left">
+    {%- for item in meta.nav.left %}
+    <li{% if item.children %} class="has-children"{% endif %}>
+      <a href="{{ item.href }}"{% if currentUrl == item.href %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- if item.children %}
+      <ul>
+        {%- for child in item.children %}
+        <li><a href="{{ child.href }}"{% if currentUrl == child.href %} aria-current="page"{% endif %}>{{ child.title }}</a></li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+
+  <a class="nav-logo" href="/">
+    <img src="/img/logo.png" alt="{{ meta.siteName }}" width="180" height="180">
+  </a>
+
+  <ul class="nav-right">
+    {%- for item in meta.nav.right %}
+    <li{% if item.children %} class="has-children"{% endif %}>
+      <a href="{{ item.href }}"{% if currentUrl == item.href %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- if item.children %}
+      <ul>
+        {%- for child in item.children %}
+        <li><a href="{{ child.href }}"{% if currentUrl == child.href %} aria-current="page"{% endif %}>{{ child.title }}</a></li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+
+  <button class="nav-toggle" aria-label="Menü" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
